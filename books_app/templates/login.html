@@ -3,7 +3,33 @@
 
 <h1>Log In</h1>
 
-<!-- TODO: Fill in the sign up form here! -->
+<form action="/login" method = "POST">
+    {{ form.csrf_token }}
+    <fieldset>
+        <legend>Enter your credentials</legend>
 
+        {{ form.username.label }}
+        {{ form.username }}
+        <ul>
+            {% for errir in form.username.errors %}
+            <li class = "error">
+                {{ error }}
+            </li>
+            {% endfor %}
+        </ul>
+
+        {{ form.password.label }}
+        {{ form.password }}
+        <ul>
+            {% for errir in form.username.errors %}
+            <li class = "error">
+                {{ error }}
+            </li>
+            {% endfor %}
+        </ul>
+
+        {{ form.submit }}
+    </fieldset>
+</form>
 
 {% endblock %}
