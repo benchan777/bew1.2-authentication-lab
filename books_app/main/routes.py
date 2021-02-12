@@ -24,6 +24,7 @@ def homepage():
 
 
 @main.route('/create_book', methods=['GET', 'POST'])
+@login_required
 def create_book():
     form = BookForm()
 
@@ -45,6 +46,7 @@ def create_book():
 
 
 @main.route('/create_author', methods=['GET', 'POST'])
+@login_required
 def create_author():
     # TODO: Make an AuthorForm instance
 
